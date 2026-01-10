@@ -1,59 +1,200 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<picture style="text-align: center;">
+  <source media="(prefers-color-scheme: dark)" srcset="public/assets/images/logo/logo-light.png">
+  <img alt="WishWaffle Logo" src="public/assets/images/logo/logo.png" width="200">
+</picture>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Bud-Lite
 
-## About Laravel
+Bud-Lite is a lightweight boilerplate for Laravel-based applications. Bud-Lite is built with...
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- Laravel 12
+- TailwindCSS v4
+- Livewire 3
+- Filament Admin Panel
+- PestPHP 4 for testing
+- FluxUi components
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Contents
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- [Requirements](#requirements)
+- [Paid Dependencies](#paid-dependencies)
+- [Environment Variables](#environment-variables)
+- [Get started with Docker (locally)](#get-started-with-docker-locally)
+    - [Build and run with Docker Compose](#build-and-run-with-docker-compose)
+    - [Database](#database)
+- [Getting started locally (without Docker)](#getting-started-locally-without-docker)
+- [Admin Panel](#admin-panel)
+    - [Creating an Admin User](#creating-an-admin-user)
+    - [Admins in Production](#admins-in-production)
+- [GitHub Actions](#github-actions)
+    - [CI Workflow (`ci.yaml`)](#ciyaml)
+    - [CD Workflow (`cd.yaml`)](#cdyaml)
+- [Testing](#testing)
+    - [Running all tests](#running-all-tests)
+    - [Running tests and updating snapshots](#running-tests-and-updating-snapshots)
+- [Useful notes and commands](#useful-notes-and-commands)
+    - [Building the Docker image manually](#building-the-docker-image-manually)
+    - [Trusted proxies](#trusted-proxies)
 
-## Learning Laravel
+## Requirements
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+- PHP 8.3+
+- Composer
+- NodeJS 20+
+- Docker (optional, for building images)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Paid Dependencies
 
-## Laravel Sponsors
+Bud-Lite uses [FluxUi](https://fluxui.dev/) pro components for the user interface. This is a paid package and a license is
+required to install the components from their private repository.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+If you have a license you can create an auth.json file with your credentials.
+See [Flux documentation](https://fluxui.dev/docs/installation) for more details.
 
-### Premium Partners
+use the following command to generate an empty auth.json file:
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+```bash
+php artisan flux:activate
+```
 
-## Contributing
+## Environment Variables
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Laravel uses environment variables to configure various aspects of the application. Most of the defaults are set in the
+`.env.example` file. You can copy this file to `.env` and modify it as needed.
 
-## Code of Conduct
+To disable stack traces in browser set `APP_DEBUG=false` in your `.env` file.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Get started with Docker (locally)
 
-## Security Vulnerabilities
+> **_Licence:_**  Ensure you have an `auth.json` file with a valid license to install paid dependencies
+see [Paid Dependencies](#paid-dependencies)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Build and run with Docker Compose
 
-## License
+The following command will build and start the application using Docker Compose:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+DOCKER_BUILDKIT=1 docker compose up --build
+```
+
+Visit [http://127.0.0.1:8000](http://127.0.0.1:8000 ) in your web browser to access the application.
+
+### Database
+
+This will use a sqlite in memory database, so any data will be lost when the container is stopped. To avoid this modify
+the `docker-compose.yml` file to use a persistent database.
+
+## Getting started locally (without Docker)
+
+1. Install PHP dependencies using Composer
+
+   > **_Licence:_**  Some dependencies require a valid license and auth.json file to install correctly
+   see [Paid Dependencies](#paid-dependencies)
+
+    ```bash
+    composer install
+    ```
+
+2. Install JavaScript dependencies using npm, or Bun
+    ```bash
+    npm install
+    # or
+    bun install
+    ```
+3. Copy the example environment file and configure your [environment variables](#environment-variables)
+    ```bash
+    cp .env.example .env
+    ```
+4. Generate an application key (APP_KEY) (if not already done)
+    ```bash
+    php artisan key:generate
+    ```
+5. Run database migrations
+    ```bash
+    php artisan migrate
+    ```
+6. Start Vite development server
+    ```bash
+    npm run dev
+    # or
+    bun run dev
+    ```
+7. Start the Laravel development server
+    ```bash
+    php artisan serve
+    ```
+
+## GitHub Actions
+
+The project includes two Github Actions workflows for CI/CD.
+
+### ci.yaml
+
+This workflow runs on every pull request to the `main` branch. It will...
+
+1. Check you have updated the project version in `composer.json`
+2. Run all the Pest tests (excluding screenshot diff tests)
+
+> **_Playwright:_**  If you need to install the Playwright browsers uncomment the lines in the `ci.yaml` file.
+> 
+#### Secrets
+
+This workflow expects the following secrets to be set in the `Testing` environment of your repository settings:
+
+1. `FLUX_USERNAME` - The email address associated with your FluxUi account
+2. `FLUX_LICENSE_KEY` - Your FluxUi license key
+
+### cd.yaml
+
+This workflow runs on every push to the `main` branch. It will...
+
+1. Build and push a Docker image to GitHub Container Registry
+2. Deploy the app to a CapRover server
+
+#### Secrets
+
+This workflow expects the following secrets to be set in the `Production` environment of your repository settings:
+
+1. `COMPOSER_AUTH` - The contents of your `auth.json` file for installing paid dependencies, note this secret MUST be a
+   single line JSON string otherwise the workflow will fail.
+2. `CAP_SERVER_URL` - The base URL of your CapRover server e.g `https://captain.yourdomain.com`
+3. `CAP_APP_NAME` - The name of the app on your CapRover server e.g `bud-lite`
+4. `CAP_APP_TOKEN` - The token for your CapRover app
+
+## Testing
+
+Bud-Lite uses PestPHP for testing. Tests are split into Feature and Unit tests located in the `tests/Feature` and
+`tests/Unit` directories respectively.
+
+Bud-Lite also makes use of Pest's snapshot testing capabilities for UI components. Snapshots are stored in the
+`tests/.pest` directory.
+
+### Running all tests
+
+```bash
+php artisan test --parallel
+```
+
+### Running tests and updating snapshots
+
+```bash
+php artisan test --update-snapshots
+```
+
+## Useful notes and commands
+
+### Building the Docker image manually
+
+Build the docker image with secret auth.json manually ...
+
+```bash
+DOCKER_BUILDKIT=1
+docker build \
+  --secret id=composer_auth,src=auth.json \
+  -t bud-lite .
+```
+
+### Trusted proxies
+
+Bud-Lite is currently configured to trust all proxies by default. If you need to restrict this, you can modify the
+`bootstrap/app.php` `trustProxies` method.
