@@ -155,6 +155,8 @@ This workflow runs on every pull request to the `main` branch. It will...
 1. Check you have updated the project version in `composer.json`
 2. Run all the Pest tests (excluding screenshot diff tests)
 
+> **_Playwright:_**  If you need to install the Playwright browsers uncomment the lines in the `ci.yaml` file.
+> 
 #### Secrets
 
 This workflow expects the following secrets to be set in the `Testing` environment of your repository settings:

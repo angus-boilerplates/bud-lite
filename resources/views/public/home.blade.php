@@ -11,6 +11,12 @@
             <li>
                 Livewire 3
             </li>
+            <li>
+                Custom error pages
+            </li>
+            <li>
+                Tests & Version check actions
+            </li>
         </ul>
 
     </x-page-container>
