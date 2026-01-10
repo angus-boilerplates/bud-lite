@@ -124,26 +124,6 @@ the `docker-compose.yml` file to use a persistent database.
     php artisan serve
     ```
 
-## Admin Panel
-
-The admin panel is built using FilamentPHP. To access the admin panel, navigate to
-Visit [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin ) in your web browser.
-
-### Creating an Admin User
-
-You can create an admin user using the following Artisan command:
-
-```bash
-php artisan make:filament-user
-```
-
-This will prompt you to enter a name, email, and password for the new admin user.
-
-### Admins in Production
-
-In production, you can set the `ADMIN_EMAIL` environment variable in your `.env` file to specify the email address of
-the admin user. This will restrict access to the admin panel to only that email address.
-
 ## GitHub Actions
 
 The project includes two Github Actions workflows for CI/CD.
