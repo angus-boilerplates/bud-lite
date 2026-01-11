@@ -1,9 +1,9 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
     "name": "angusgoody/bud-lite",
-    "version": "0.0.2",
+    "version": "0.0.1",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
+    "description": "A lightweight Laravel starter kit.",
     "keywords": [
         "laravel",
         "framework"
