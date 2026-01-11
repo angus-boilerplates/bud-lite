@@ -1,7 +1,7 @@
 services:
   app:
-    image: poo26
-    container_name: poo26-app
+    image: bud
+    container_name: bud-app
     build:
       context: .
       dockerfile: Dockerfile
