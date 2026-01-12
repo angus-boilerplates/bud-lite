@@ -2,7 +2,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 {{--Meta--}}
-<!--Angus was here 2026-->
 <title>@yield('title', config('app.name'))</title>
 <meta name="description"
       content="@yield('description', 'Bud is a simple boilerplate for quickly building Laravel applications')"/>

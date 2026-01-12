@@ -54,6 +54,14 @@ use the following command to generate an empty auth.json file:
 php artisan flux:activate
 ```
 
+if you have already setup an auth.json file you can install the flux pro components with:
+
+```bash
+composer require livewire/flux-pro
+```
+
+
+
 ## Environment Variables
 
 Laravel uses environment variables to configure various aspects of the application. Most of the defaults are set in the
