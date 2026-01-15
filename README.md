@@ -27,7 +27,6 @@ Bud-Lite is a lightweight boilerplate for Laravel-based applications. Bud-Lite i
     - [CD Workflow (`cd.yaml`)](#cdyaml)
 - [Testing](#testing)
     - [Running all tests](#running-all-tests)
-    - [Running tests and updating snapshots](#running-tests-and-updating-snapshots)
 - [Useful notes and commands](#useful-notes-and-commands)
     - [Building the Docker image manually](#building-the-docker-image-manually)
     - [Trusted proxies](#trusted-proxies)
@@ -170,8 +169,6 @@ This workflow expects the following secrets to be set in the `Production` enviro
 Bud-Lite uses PestPHP for testing. Tests are split into Feature and Unit tests located in the `tests/Feature` and
 `tests/Unit` directories respectively.
 
-Bud-Lite also makes use of Pest's snapshot testing capabilities for UI components. Snapshots are stored in the
-`tests/.pest` directory.
 
 ### Running all tests
 
@@ -179,11 +176,6 @@ Bud-Lite also makes use of Pest's snapshot testing capabilities for UI component
 php artisan test --parallel
 ```
 
-### Running tests and updating snapshots
-
-```bash
-php artisan test --update-snapshots
-```
 
 ## Useful notes and commands
 
