@@ -3,13 +3,13 @@
         <h2 class="mb-2 text-lg font-medium text-heading">Features</h2>
         <ul class="max-w-md space-y-1 text-body list-disc list-inside">
             <li>
-                Admin panel
+                Laravel 12
             </li>
             <li>
-                FluxUi components
+                Tailwind 4
             </li>
             <li>
-                Livewire 3
+                Livewire 4
             </li>
             <li>
                 Custom error pages
