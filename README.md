@@ -10,7 +10,6 @@ Bud-Lite is a lightweight boilerplate for Laravel-based applications. Bud-Lite i
 - Laravel 12
 - TailwindCSS v4
 - Livewire 3
-- Filament Admin Panel
 - PestPHP 4 for testing
 - FluxUi components
 
