@@ -2283,7 +2283,6 @@
                 "symfony/console": "^6.0|^7.0"
             },
             "require-dev": {
-                "livewire/volt": "*",
                 "orchestra/testbench": "^10.8"
             },
             "type": "library",
