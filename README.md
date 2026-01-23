@@ -12,12 +12,14 @@ Bud-Lite is a lightweight boilerplate for Laravel-based applications. Bud-Lite i
 - Livewire 4
 - PestPHP 4 for testing
 - FluxUi components
+- Privacy policy template
 
 ## Contents
 
 - [Requirements](#requirements)
 - [Paid Dependencies](#paid-dependencies)
 - [Environment Variables](#environment-variables)
+- [Privacy Policy](#privacy-policy)
 - [Get started with Docker (locally)](#get-started-with-docker-locally)
     - [Build and run with Docker Compose](#build-and-run-with-docker-compose)
     - [Database](#database)
@@ -86,6 +88,12 @@ Visit [http://127.0.0.1:8000](http://127.0.0.1:8000 ) in your web browser to acc
 
 This will use a sqlite in memory database, so any data will be lost when the container is stopped. To avoid this modify
 the `docker-compose.yml` file to use a persistent database.
+
+## Privacy Policy
+
+A sample privacy policy is included in the `privacy-policy.blade.php` view located in the `resources/views/public/privacy-policy` directory.
+
+The content of this page are stored in a Markdown file in `resources/markdown/privacy.md` which is rendered using blade.
 
 ## Getting started locally (without Docker)
 
