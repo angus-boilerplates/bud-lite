@@ -1,7 +1,7 @@
 services:
   app:
-    image: bud
-    container_name: bud-app
+    image: local/bud-lite
+    container_name: bud-lite-app
     build:
       context: .
       dockerfile: Dockerfile
