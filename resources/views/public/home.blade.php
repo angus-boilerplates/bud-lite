@@ -17,6 +17,9 @@
             <li>
                 Tests & Version check actions
             </li>
+            <li>
+                Privacy Policy page template
+            </li>
         </ul>
 
     </x-page-container>
