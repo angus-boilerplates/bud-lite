@@ -1,10 +1,11 @@
-<x-layouts.core.master>
+<x-layouts::master>
     @section('title', $title ?? null)
     <div class="min-h-screen flex flex-col">
-        <x-layouts.core.header/>
+        <x-public.header/>
         <div class="flex-1 flex">
             {{ $slot }}
         </div>
-        <x-layouts.core.footer/>
+        <x-public.footer/>
     </div>
-</x-layouts.core.master>
+</x-layouts::master>
+
