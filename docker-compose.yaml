@@ -11,7 +11,7 @@ services:
       APP_NAME: Bud Lite (Docker)
       APP_ENV: production
       APP_KEY: base64:YZ2w1r0DV2J5QDERTYUCjJenuukcTjnua+UrZNGSIsw=
-      APP_DEBUG: false
+      APP_DEBUG: true
       APP_URL: http://127.0.0.1:8123
 
       # Cache & Redis
@@ -40,40 +40,54 @@ services:
       MAIL_FROM_NAME: Bud Lite
 
     ports:
-      - "8123:8000"
+      - "8000:8000"
     depends_on:
-      - redis
-      - mysql
-      - mailpit
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_started
+      mailpit:
+        condition: service_started
+    networks:
+      - bud-lite-net
     restart: unless-stopped
 
   redis:
     image: redis:7-alpine
     container_name: bud-lite-redis
-    ports:
-      - "6379:6379"
+    networks:
+      - bud-lite-net
     restart: unless-stopped
 
   mysql:
     image: mysql:8.1
     container_name: bud-lite-mysql
     environment:
-      MYSQL_ROOT_PASSWORD: rootsecret
+      MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: bud_lite
       MYSQL_USER: bud_user
       MYSQL_PASSWORD: secret
-    ports:
-      - "3306:3306"
     volumes:
       - mysql-data:/var/lib/mysql
+    networks:
+      - bud-lite-net
+    ports:
+      - "3306:3306"
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p password" ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
     restart: unless-stopped
 
   mailpit:
     image: axllent/mailpit:latest
     container_name: bud-lite-mailpit
     ports:
-      - "1025:1025"   # SMTP
-      - "8025:8025"   # Web UI
+      - "1025:1025"
+      - "8025:8025"
+    networks:
+      - bud-lite-net
     restart: unless-stopped
 
 secrets:
@@ -82,3 +96,7 @@ secrets:
 
 volumes:
   mysql-data:
+
+networks:
+  bud-lite-net:
+    driver: bridge
