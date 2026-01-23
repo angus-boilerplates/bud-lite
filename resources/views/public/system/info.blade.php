@@ -1,4 +1,4 @@
-<x-layouts.minimal title="Bud | System info">
+<x-layouts::minimal title="Bud | System info">
     <x-page-container>
         <flux:card class="space-y-6" >
             <div class="px-4 sm:px-0">
@@ -54,4 +54,4 @@
 
         </flux:card>
     </x-page-container>
-</x-layouts.minimal>
+</x-layouts::minimal>

@@ -23,11 +23,9 @@
                 </flux:tooltip>
             </div>
             <p x-data="{}" class="mt-8 text-base text-gray-500 md:order-1 md:mt-0 text-center">
-                &copy; {{ date('Y') }}
-                <a
-                    href="#"
-                    class="cursor-pointer hover:text-accent"
-                >Bud</a> | Designed by Angus Goody
+                &copy; {{ date('Y') }} Bud |
+                <flux:link wire:navigate href="{{route('privacy-policy')}}" variant="ghost">Privacy Policy</flux:link>
+                | Designed by Angus Goody
             </p>
         </div>
     </x-container>

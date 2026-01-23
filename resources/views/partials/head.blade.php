@@ -6,6 +6,8 @@
 <meta name="description"
       content="@yield('description', 'Bud is a simple boilerplate for quickly building Laravel applications')"/>
 <meta property="og:image" content="{{ url('assets/images/core/ogimage.jpg') }}">
+<meta property="og:title" content="@yield('og:title', "Bud - Laravel Boilerplate"))">
+
 <meta name="keywords" content="@yield('keywords', 'Bud')"/>
 
 {{--Icons--}}
@@ -15,6 +17,8 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/core/apple-touch-icon.png"/>
 <meta name="apple-mobile-web-app-title" content="Bud"/>
 <link rel="manifest" href="/assets/images/core/site.webmanifest"/>
+
+<link rel="canonical" href="{{ request()->fullUrl() }}">
 
 {{--Fonts--}}
 <link rel="preconnect" href="https://fonts.bunny.net">

@@ -12,15 +12,19 @@ Bud-Lite is a lightweight boilerplate for Laravel-based applications. Bud-Lite i
 - Livewire 4
 - PestPHP 4 for testing
 - FluxUi components
+- Privacy policy template
 
 ## Contents
 
 - [Requirements](#requirements)
 - [Paid Dependencies](#paid-dependencies)
 - [Environment Variables](#environment-variables)
+- [Privacy Policy](#privacy-policy)
 - [Get started with Docker (locally)](#get-started-with-docker-locally)
     - [Build and run with Docker Compose](#build-and-run-with-docker-compose)
     - [Database](#database)
+    - [Mailpit](#mailpit)
+    - [Redis](#redis)
 - [Getting started locally (without Docker)](#getting-started-locally-without-docker)
 - [GitHub Actions](#github-actions)
     - [CI Workflow (`ci.yaml`)](#ciyaml)
@@ -80,12 +84,26 @@ The following command will build and start the application using Docker Compose:
 DOCKER_BUILDKIT=1 docker compose up --build
 ```
 
-Visit [http://127.0.0.1:8000](http://127.0.0.1:8000 ) in your web browser to access the application.
+Visit [http://127.0.0.1:8123](http://127.0.0.1:8123 ) in your web browser to access the application.
 
 ### Database
 
-This will use a sqlite in memory database, so any data will be lost when the container is stopped. To avoid this modify
-the `docker-compose.yml` file to use a persistent database.
+The compose file includes a MySQL database service configured to persist data in a Docker volume.
+
+### Mailpit
+
+The compose file also includes a Mailpit service for previewing emails sent by the application. You can access the
+Mailpit web interface at [http://localhost:8025/]
+
+### Redis
+
+The compose file includes a Redis service used for caching and session management.
+
+## Privacy Policy
+
+A sample privacy policy is included in the `privacy-policy.blade.php` view located in the `resources/views/public/privacy-policy` directory.
+
+The content of this page are stored in a Markdown file in `resources/markdown/privacy.md` which is rendered using blade.
 
 ## Getting started locally (without Docker)
 
@@ -129,7 +147,7 @@ the `docker-compose.yml` file to use a persistent database.
 
 ## GitHub Actions
 
-The project includes two Github Actions workflows for CI/CD.
+The project includes two GitHub Actions workflows for CI/CD.
 
 ### ci.yaml
 
@@ -139,7 +157,7 @@ This workflow runs on every pull request to the `main` branch. It will...
 2. Run all the Pest tests (excluding screenshot diff tests)
 
 > **_Playwright:_**  If you need to install the Playwright browsers uncomment the lines in the `ci.yaml` file.
-> 
+ 
 #### Secrets
 
 This workflow expects the following secrets to be set in the `Testing` environment of your repository settings:
@@ -148,6 +166,9 @@ This workflow expects the following secrets to be set in the `Testing` environme
 2. `FLUX_LICENSE_KEY` - Your FluxUi license key
 
 ### cd.yaml
+
+> **_Note_**  The trigger to build on push to `main` is commented out in the Yaml to prevent accidental deployments.
+
 
 This workflow runs on every push to the `main` branch. It will...
 
