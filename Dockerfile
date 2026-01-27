@@ -68,9 +68,4 @@ RUN chmod +x /start.sh
 # Remove the 'tests' directory
 RUN rm -rf /var/www/html/tests
 
-# Copy supervisor configs
-COPY server/supervisord.conf /etc/supervisord.conf
-COPY server/queue-worker.conf /etc/supervisor/conf.d/queue-worker.conf
-
-
 CMD ["sh", "/start.sh"]
