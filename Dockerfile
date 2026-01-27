@@ -65,7 +65,5 @@ WORKDIR /var/www/html
 COPY server/start.sh /start.sh
 RUN chmod +x /start.sh
 
-# Remove the 'tests' directory
-RUN rm -rf /var/www/html/tests
 
 CMD ["sh", "/start.sh"]
