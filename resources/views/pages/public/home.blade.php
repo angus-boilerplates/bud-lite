@@ -3,7 +3,7 @@
         <h2 class="mb-2 text-lg font-medium text-heading">Features</h2>
         <ul class="max-w-md space-y-1 text-body list-disc list-inside">
             <li>
-                Laravel 12
+                Laravel 13
             </li>
             <li>
                 Tailwind 4

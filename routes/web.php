@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 // Home Route
 Route::get('/', function () {
-    return view('public.home');
+    return view('pages.public.home');
 })->name('home');
 
 // Privacy Policy
