@@ -7,12 +7,13 @@
 
 Bud-Lite is a lightweight boilerplate for Laravel-based applications. Bud-Lite is built with...
 
-- Laravel 12
+- Laravel 13
 - TailwindCSS v4
 - Livewire 4
 - PestPHP 4 for testing
 - FluxUi components
 - Privacy policy template
+- Laravel boost
 
 ## Contents
 
@@ -44,7 +45,8 @@ Bud-Lite is a lightweight boilerplate for Laravel-based applications. Bud-Lite i
 
 ## Paid Dependencies
 
-Bud-Lite uses [FluxUi](https://fluxui.dev/) pro components for the user interface. This is a paid package and a license is
+Bud-Lite uses [FluxUi](https://fluxui.dev/) pro components for the user interface. This is a paid package and a license
+is
 required to install the components from their private repository.
 
 If you have a license you can create an auth.json file with your credentials.
@@ -61,8 +63,6 @@ if you have already setup an auth.json file you can install the flux pro compone
 ```bash
 composer require livewire/flux-pro
 ```
-
-
 
 ## Environment Variables
 
@@ -101,7 +101,8 @@ The compose file includes a Redis service used for caching and session managemen
 
 ## Privacy Policy
 
-A sample privacy policy is included in the `privacy-policy.blade.php` view located in the `resources/views/public/privacy-policy` directory.
+A sample privacy policy is included in the `privacy-policy.blade.php` view located in the
+`resources/views/public/privacy-policy` directory.
 
 The content of this page are stored in a Markdown file in `resources/markdown/privacy.md` which is rendered using blade.
 
@@ -157,7 +158,7 @@ This workflow runs on every pull request to the `main` branch. It will...
 2. Run all the Pest tests (excluding screenshot diff tests)
 
 > **_Playwright:_**  If you need to install the Playwright browsers uncomment the lines in the `ci.yaml` file.
- 
+
 #### Secrets
 
 This workflow expects the following secrets to be set in the `Testing` environment of your repository settings:
@@ -190,13 +191,11 @@ This workflow expects the following secrets to be set in the `Production` enviro
 Bud-Lite uses PestPHP for testing. Tests are split into Feature and Unit tests located in the `tests/Feature` and
 `tests/Unit` directories respectively.
 
-
 ### Running all tests
 
 ```bash
 php artisan test --parallel
 ```
-
 
 ## Useful notes and commands
 
