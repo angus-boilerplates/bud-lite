@@ -214,3 +214,8 @@ docker build \
 
 Bud-Lite is currently configured to trust all proxies by default. If you need to restrict this, you can modify the
 `bootstrap/app.php` `trustProxies` method.
+
+### Log viewer (in development)
+
+Go to [http://bud-lite.test/log-viewer](http://bud-lite.test/log-viewer) to view application logs in development. This route is
+protected by the `local` middleware and will not be accessible in production.
