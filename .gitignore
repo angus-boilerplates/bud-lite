@@ -25,3 +25,12 @@ Thumbs.db
 **/caddy
 frankenphp
 frankenphp-worker.php
+
+.vite
+.mcp.json
+/.claude
+CLAUDE.md
+.github/copilot
+.github/copilot-instructions.md
+.github/skills
+AGENTS.md
