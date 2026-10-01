@@ -26,3 +26,11 @@ auth.json
 /public/hot
 /public/storage
 /storage/*.key
+/boost.json
+/.claude
+/.ai
+CLAUDE.md
+.github/copilot
+.github/copilot-instructions.md
+.github/skills
+AGENTS.md
