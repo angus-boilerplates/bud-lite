@@ -25,7 +25,7 @@ Thumbs.db
 **/caddy
 frankenphp
 frankenphp-worker.php
-
+/boost.json
 .vite
 .mcp.json
 /.claude
@@ -34,3 +34,4 @@ CLAUDE.md
 .github/copilot-instructions.md
 .github/skills
 AGENTS.md
+.ai
