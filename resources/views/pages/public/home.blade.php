@@ -1,26 +1,28 @@
-<x-layouts::public title="Bud | Boilerplate for Laravel Applications">
+<x-layouts::public title="Welcome to Bud Lite">
     <x-page-container>
-        <h2 class="mb-2 text-lg font-medium text-heading">Features</h2>
-        <ul class="max-w-md space-y-1 text-body list-disc list-inside">
-            <li>
-                Laravel 13
-            </li>
-            <li>
-                Tailwind 4
-            </li>
-            <li>
-                Livewire 4
-            </li>
-            <li>
-                Custom error pages
-            </li>
-            <li>
-                Tests & Version check actions
-            </li>
-            <li>
-                Privacy Policy page template
-            </li>
-        </ul>
+        <div>
+            <div class="mx-auto max-w-3xl md:text-center">
+                <p class="text-base/7 font-semibold  text-emerald-600 dark:text-emerald-400">
+                    Bud Lite
+                </p>
+                <h1 class="mt-2 font-shantell text-5xl font-bold tracking-tight text-pretty text-gray-900 sm:text-5xl md:text-6xl lg:text-balance dark:text-white">
+                    A simple light weight boilerplate <span class="block text-emerald-500 dark:text-emerald-400 xl:inline">for</span>
+                    Laravel
+                </h1>
+                <p class="mt-6 text-lg/7 text-gray-500 dark:text-gray-400  max-w-md md:max-w-xl md:mx-auto">
+                    Bud comes packed with basic features to kickstart your Laravel project.
+                </p>
 
+                <div class="mx-auto mt-5 sm:flex md:justify-center md:mt-8">
+                    <div class="rounded-md shadow-sm">
+                        <a href="#"
+                           class="flex w-full items-center justify-center rounded-md border border-transparent bg-emerald-500 dark:bg-emerald-400 dark:hover:bg-emerald-300 px-8 py-3 text-base font-medium text-white dark:text-emerald-800 hover:bg-emerald-600 md:px-10 md:py-4 md:text-lg">
+                            Call to Action
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </x-page-container>
 </x-layouts::public>

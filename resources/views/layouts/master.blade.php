@@ -7,6 +7,11 @@
     <body class="bg-zinc-50 dark:bg-zinc-800">
     {{ $slot }}
     </body>
-    <flux:toast/>
+    @persist('toast')
+    <flux:toast.group>
+        <flux:toast/>
+    </flux:toast.group>
+    @endpersist
+
     @fluxScripts
 </html>
