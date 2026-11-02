@@ -3,16 +3,20 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "build": "vite build",
-        "dev": "vite"
+        "build": "vp build",
+        "dev": "vp dev"
     },
     "devDependencies": {
-        "@tailwindcss/typography": "^0.5.19",
+        "@tailwindcss/typography": "^0.5.4",
         "@tailwindcss/vite": "^4.2.2",
         "axios": "^1.11.0",
         "concurrently": "^9.0.1",
         "laravel-vite-plugin": "^3.0.0",
         "tailwindcss": "^4.2.2",
-        "vite": "^8.0.0"
+        "vite": "npm:@voidzero-dev/vite-plus-core@1.4.0",
+        "vite-plus": "1.4.0"
+    },
+    "overrides": {
+        "vite": "npm:@voidzero-dev/vite-plus-core@1.4.0"
     }
 }
