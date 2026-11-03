@@ -19,7 +19,7 @@
 <meta name="theme-color" content="#31EA98"/>
 <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
+      "@@context": "https://schema.org",
       "@type": "WebPage",
       "name": "Bud",
       "description": "Bud is a simple boilerplate"
