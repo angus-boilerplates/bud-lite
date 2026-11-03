@@ -6,9 +6,25 @@
 <meta name="description"
       content="@yield('description', 'Bud is a simple boilerplate for quickly building Laravel applications')"/>
 <meta property="og:image" content="{{ url('assets/images/core/ogimage.jpg') }}">
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+
+<meta property="og:url" content="https://example.com"/>
 <meta property="og:title" content="@yield('og:title', "Bud - Laravel Boilerplate")">
+<meta property="og:site_name" content="Bud"/>
 
 <meta name="keywords" content="@yield('keywords', 'Bud')"/>
+
+<meta property="og:locale" content="en_GB"/>
+<meta name="theme-color" content="#31EA98"/>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Bud",
+      "description": "Bud is a simple boilerplate"
+    }
+</script>
 
 {{--Icons--}}
 <link rel="icon" type="image/png" href="/assets/images/core/favicon-96x96.png" sizes="96x96"/>
