@@ -6,7 +6,7 @@
 <meta name="description"
       content="@yield('description', 'Bud is a simple boilerplate for quickly building Laravel applications')"/>
 <meta property="og:image" content="{{ url('assets/images/core/ogimage.jpg') }}">
-<meta property="og:title" content="@yield('og:title', "Bud - Laravel Boilerplate"))">
+<meta property="og:title" content="@yield('og:title', "Bud - Laravel Boilerplate")">
 
 <meta name="keywords" content="@yield('keywords', 'Bud')"/>
 
