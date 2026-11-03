@@ -4,17 +4,17 @@
 <div class="text-center">
     @if ($mode === 'light')
         <img {{ $attributes->class('h-15 mx-auto') }}
-             src="{{ asset('assets/images/logo/logo.png') }}" alt="Bud Logo">
+             src="{{ asset('assets/images/logo/logo.png') }}" :alt="config('app.name', 'Laravel') Logo">
     @elseif ($mode === 'dark')
         <img {{ $attributes->class('h-15 mx-auto') }}
-             src="{{ asset('assets/images/logo/logo-light.png') }}" alt="Bud Logo">
+             src="{{ asset('assets/images/logo/logo-light.png') }}" :alt="config('app.name', 'Laravel') Logo">
     @else
         {{-- auto (Tailwind dark mode) --}}
         <img {{ $attributes->class('dark:hidden h-15 mx-auto') }}
-             src="{{ asset('assets/images/logo/logo.png') }}" alt="Bud Logo">
+             src="{{ asset('assets/images/logo/logo.png') }}" :alt="config('app.name', 'Laravel') Logo">
 
         <img {{ $attributes->class('hidden dark:block h-15 mx-auto') }}
-             src="{{ asset('assets/images/logo/logo-light.png') }}" alt="Bud Logo">
+             src="{{ asset('assets/images/logo/logo-light.png') }}" :alt="config('app.name', 'Laravel') Logo">
     @endif
     <p class="mt-2 text-black/60 dark:text-white/60">A boilerplate for Laravel</p>
 </div>
